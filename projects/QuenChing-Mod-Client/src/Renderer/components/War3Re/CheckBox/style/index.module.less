@@ -1,0 +1,38 @@
+.war3-checkbox{
+	display : flex;;
+	
+	&:global(.disabled){
+		filter: grayscale(1);
+		pointer-events: none;
+	}
+	
+	:global{
+		
+		
+		.checkbox{
+			//background-color: rgba(0, 0, 0, 0.85);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-image: url("../assets/checkbox-background.png");
+			background-size: cover;
+			
+			&:hover{
+				background-image: url("../assets/checkbox-background-hover.png");
+			}
+			
+			&.checked{
+				background-image: url("../assets/checked-checkbox-background.png");
+				
+				&:hover{
+					background-image: url("../assets/checked-checkbox-background-hover.png");
+				}
+			}
+		}
+		
+		
+		
+		.label{
+			
+		}
+	}
+}

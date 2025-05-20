@@ -1,0 +1,15 @@
+{
+	"name": "quenching-mod-client",
+	"version": "1.0.0",
+	"keywords": [],
+	"author": "Kane",
+	"license": "ISC",
+	"main" : "dist/main.js" ,
+	"scripts" : {
+		
+	} ,
+	"dependencies": {
+		
+	},
+	"description": ""
+}

@@ -1,0 +1,30 @@
+.showcase {
+	overflow: hidden;
+	padding: 8px;
+	width: 100%;
+	box-sizing: border-box;
+	transition: width ease .25s 0s;
+	display: flex;
+;
+	
+	&:global(.game-running) {
+		
+	}
+	;
+	:global {
+		
+		.ant-divider {
+			flex: 0 0 0 ; 
+			opacity: 0;
+			min-width: 0;
+			height: auto;
+			zoom: 2;
+			transition: flex 0.3s ease, opacity 0.3s ease; /* 动画过渡 */
+			
+			&.game-running{
+				flex: 0 0 auto;
+				opacity: 1;
+			}
+		}
+	}
+}

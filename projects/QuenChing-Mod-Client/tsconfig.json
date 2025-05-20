@@ -1,0 +1,43 @@
+{
+	"compilerOptions" : {
+		"allowJs" : true ,
+		"allowSyntheticDefaultImports" : true ,
+		"allowUnusedLabels" : true ,
+		"baseUrl" : "." ,
+		"declaration" : false ,
+		"declarationMap" : false ,
+		"esModuleInterop" : true ,
+		"experimentalDecorators" : true ,
+		"jsx": "react-jsx",
+		"resolveJsonModule" : true ,
+		"strictFunctionTypes" : false ,
+		"strict" : false ,
+		"strictBindCallApply" : false ,
+		"strictNullChecks" : false ,
+		"allowUnreachableCode" : true ,
+		"module" : "ESNext" ,
+		"moduleResolution" : "node" ,
+		"noEmit" : true ,
+		"noImplicitAny" : false ,
+		"noImplicitReturns" : false ,
+		"noImplicitUseStrict" : false ,
+		"noUnusedLocals" : false ,
+		"noUnusedParameters" : false ,
+		"preserveConstEnums" : true ,
+		"checkJs" : true ,
+		"target" : "ESNext" ,
+		"allowSyntheticDefaultImports" : true ,
+		"typeRoots" : [ "node_modules/@types" , "./types" , "../../../../" ] ,
+		"paths" : {
+			"#root/*" : ["../../../../*"],
+			"#main/*" : ["./src/Main/*"],
+			"#renderer/*" : ["./src/Renderer/*"],
+			"#src/*" : ["./src/*"],
+			"#root-projects/*" : ["../../../../projects/*"],
+			"#generic/*" : ["../../../../generic-services/*"],
+			"#project/*" : ["./*"]
+		}
+	},
+	"include" : [ "./src/**" , "../../../../*" , "**/*.ts" , "**/*.tsx" , "../../../../node_modules/@types/node/buffer.d.ts" , "../../../../generic-services/global.d.ts" ] ,
+	"exclude" : [ "node_modules/@types/node" ]
+}

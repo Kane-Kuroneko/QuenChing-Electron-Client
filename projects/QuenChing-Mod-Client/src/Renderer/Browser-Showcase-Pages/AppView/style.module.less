@@ -1,0 +1,12 @@
+.app-view {
+	transition: width ease .3s 0s ;
+	display: flex;
+	flex: 1;
+	transition: flex 0.3s ease, opacity 0.3s ease; /* 动画过渡 */
+	;
+	&:global(.game-running){
+		width: 100%;
+		flex: 1 !important; /* 100%宽度 */
+		opacity: 1;
+	}
+}
