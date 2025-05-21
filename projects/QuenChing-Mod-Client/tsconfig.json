@@ -31,6 +31,7 @@
 		"paths" : {
 			"#root/*" : ["../../../../*"],
 			"#main/*" : ["./src/Main/*"],
+			"#assets/*" : ["./assets/*"],
 			"#renderer/*" : ["./src/Renderer/*"],
 			"#src/*" : ["./src/*"],
 			"#root-projects/*" : ["../../../../projects/*"],
@@ -38,6 +39,6 @@
 			"#project/*" : ["./*"]
 		}
 	},
-	"include" : [ "./src/**" , "../../../../*" , "**/*.ts" , "**/*.tsx" , "../../../../node_modules/@types/node/buffer.d.ts" , "../../../../generic-services/global.d.ts" ] ,
+	"include" : ["../../global.d.ts","../../g.d.ts", "./src/**" , "../../../../*" , "**/*.ts" , "**/*.tsx"  , "../../../../generic-services/global.d.ts" ] ,
 	"exclude" : [ "node_modules/@types/node" ]
 }

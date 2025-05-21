@@ -1,5 +1,15 @@
 .war3-checkbox{
-	display : flex;;
+	display : flex;
+	height: auto;
+	user-select: none;
+	cursor: pointer;
+	
+	label{
+		display: flex;
+		align-items: center;
+		height: fit-content;
+		cursor: pointer;
+	}
 	
 	&:global(.disabled){
 		filter: grayscale(1);
@@ -32,7 +42,10 @@
 		
 		
 		.label{
-			
+			margin-left: 10px;
+			font-size: 22px;
+			color: #e6e6e6;
+			line-height: 0;
 		}
 	}
 }

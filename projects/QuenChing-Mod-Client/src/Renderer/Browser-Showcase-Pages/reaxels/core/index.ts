@@ -2,7 +2,7 @@ export const reaxel_Core = reaxel(() => {
 	
 	const {store,setState,mutate} = createReaxable({
 		gameRunning: false,
-		modEnabled: false,
+		modEnabled: true,
 		modInstalled : false,
 		modInstalling : false,
 		gameEdition : 'reforged' as GameEdition,

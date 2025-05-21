@@ -7,9 +7,7 @@ export const GameView = reaxper(() => {
 			width="100%"
 			height= "auto"
 		/>
-		
-		<Button
-			
+		<PrimaryBtn
 			className="x-btn"
 			size="large"
 			onClick={() => {
@@ -21,10 +19,11 @@ export const GameView = reaxper(() => {
 			}}
 		>
 			关闭游戏
-		</Button>
+		</PrimaryBtn>
 	</div>
 })
 
+import { PrimaryBtn } from '#renderer/components/War3Re/PrimaryBtn';
 import { reaxel_Core } from '#renderer/Browser-Showcase-Pages/reaxels/core';
 import { Button } from 'antd';
 import image from './img_1.png';

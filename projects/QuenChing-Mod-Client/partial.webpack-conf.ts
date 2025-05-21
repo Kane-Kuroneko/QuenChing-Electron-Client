@@ -19,6 +19,7 @@ export const main = (
 				'#main' : path.join(subProjectRootPath,'src/Main'),
 				'#renderer' : path.join(subProjectRootPath,'src/Renderer'),
 				'#src' : path.join(subProjectRootPath,'src'),
+				'#assets' : path.join(subProjectRootPath,'assets'),
 			}
 		},
 		plugins : [
@@ -64,6 +65,7 @@ export const renderer = (repoRootPath: string, subProjectRootPath: string): Webp
 				'#main' : path.join(subProjectRootPath,'src/Main'),
 				'#renderer' : path.join(subProjectRootPath,'src/Renderer'),
 				'#src' : path.join(subProjectRootPath,'src'),
+				'#assets' : path.join(subProjectRootPath,'assets'),
 			}
 		},
 		plugins : [

@@ -48,7 +48,7 @@ function setReplace (replace, val, k, parent) {
 	var propertyDescriptor = Object.getOwnPropertyDescriptor(parent, k)
 	if (propertyDescriptor.get !== undefined) {
 		if (propertyDescriptor.configurable) {
-			Object.defineProperty(parent, k, { value: replace })
+			Object.defineProperty(parent, k, { selectedKey: replace })
 			arr.push([parent, k, val, propertyDescriptor])
 		} else {
 			replacerStack.push([val, k, replace])

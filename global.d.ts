@@ -1,3 +1,4 @@
+//@ts-nocheck
 declare global {
 	// export const requester : typeof import('#src/requester').requester;
 	export const _ : typeof import('lodash');
@@ -9,8 +10,8 @@ declare global {
 	export const reaxper : typeof import('reaxes-react')['reaxper'];
 	export const Reaxlass : typeof import('reaxes-react')['Reaxlass'];
 	
-	export const utils : typeof import('#generic/utils');
 	export const xPromise : typeof import('reaxes-utils')['xPromise'];
+	export const utils : typeof import('#generic/utils');
 	export const crayon : typeof import('#generic/utils')['crayon'];
 	export const logProxy : typeof import('#generic/utils')['logProxy'];
 	export const makePair : typeof import('#generic/utils')['makePair'];
@@ -21,11 +22,11 @@ declare global {
 	
 	
 	// export const React: typeof ReactModule;
-	export const useLayoutEffect : typeof React.useLayoutEffect;
-	export const useCallback : typeof React.useCallback;
-	export const useState : typeof React.useState;
-	export const useEffect : typeof React.useEffect;
-	export const useRef : typeof React.useRef;
+	// export const useLayoutEffect : typeof React.useLayoutEffect;
+	// export const useCallback : typeof React.useCallback;
+	// export const useState : typeof React.useState;
+	// export const useEffect : typeof React.useEffect;
+	// export const useRef : typeof React.useRef;
 	
 	namespace React {
 		type R = typeof import('react');
@@ -39,6 +40,6 @@ declare global {
 		ipcRenderer : typeof import('electron')['ipcRenderer']
 	}
 }
-import * as ReactModule from 'react';
+// import * as ReactModule from 'react';
 
 export {}
