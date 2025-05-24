@@ -37,7 +37,11 @@ app.whenReady().then( () => {
 	// console.log( 'HDR support:' , hdrSupported );
 } );
 
+import si from "systeminformation";
 
+si.graphics().then(data => {
+	console.log("GPU:", data.controllers.map(ctrl => ctrl.model));
+});
 import "#main/index";
 import "#main/reaxels/menu";
 import { reaxel_MainProcessHub } from '#main/reaxels/main-process-hub';

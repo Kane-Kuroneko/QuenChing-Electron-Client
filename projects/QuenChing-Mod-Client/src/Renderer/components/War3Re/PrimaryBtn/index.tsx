@@ -4,14 +4,15 @@ export const PrimaryBtn = forwardRef<HTMLDivElement , React.PropsWithChildren<Pr
 		middle : 1 ,
 		large : 1.5 ,
 	};
-	const { children , size = 'middle' , className , disabled , title , onClick } = props;
+	const { children , size = 'middle' , className , disabled , tooltip , onClick , style } = props;
 	return (
 		<div
 			className = { classnames(className,less['primary-btn'], disabled && 'disabled') }
-			style = { { zoom : sizeHeightMap[size] } }
+			style = { { zoom : sizeHeightMap[size] , ...(style || {}) } }
 			ref = { ref }
-			title={title}
+			title={tooltip}
 			onClick={onClick}
+			
 		>
 			<div
 				className = { classnames('front-btn-bg' ) }
@@ -30,8 +31,9 @@ export interface PrimaryBtnProps<T = string> {
 	size?: 'small' | 'middle' | 'large';
 	className?: string;
 	disabled?: boolean;
-	title?: string;
+	tooltip?: string;
 	onClick?: ( e?: React.MouseEvent<HTMLDivElement , MouseEvent> ) => void;
+	style?: React.CSSProperties;
 }
 
 import React , { forwardRef } from 'react';

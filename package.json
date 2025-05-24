@@ -10,7 +10,6 @@
 		"electron-start:quenching": "tsx scripts/electron.start/index.ts QuenChing-Mod-Client",
 		"webpack-build:quenching": "tsx ./scripts/webpack.build/index.ts QuenChing-Mod-Client production",
 		"electron-build:quenching": "cd projects/QuenChing-Mod-Client && electron-builder build -w",
-		
 		"postinstall": "patch-package"
 	},
 	"electronmon": {
@@ -49,6 +48,7 @@
 		"regedit": "^5.1.3",
 		"shallowequal": "^1.1.0",
 		"swiper": "^11.2.6",
+		"systeminformation": "^5.26.2",
 		"webpack-bundle-analyzer": "^4.10.2"
 	},
 	"devDependencies": {

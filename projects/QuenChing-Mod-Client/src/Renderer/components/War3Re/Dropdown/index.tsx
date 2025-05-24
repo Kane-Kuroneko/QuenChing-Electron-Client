@@ -1,44 +1,63 @@
-
-export const War3Dropdown = reaxper((props:War3DropdownProps) => {
+export const War3Dropdown = reaxper(( props: War3DropdownProps ) => {
+	const zoom = {
+		'small' : .8 ,
+		'middle' : .6 ,
+		'large' : .6 ,
+	}[props.size ?? 'middle'];
 	
-	
-	return <ConfigProvider
-		theme = { {
-			token : {
-				motion : false ,
-			},
-		} }
-	><Dropdown
-		menu = { props.menu }
-		trigger = { [ 'click' ] }
-		open = { props.open }
-		onOpenChange = { props.onOpenChange }
-		overlayClassName = { classnames(less['dropdown']) }
-	>
-		{/*<input type = "range" />*/ }
-		<div
-			className = { classnames(less['dropdown-btn']) }
+	const Btn = reaxper(React.forwardRef<HTMLDivElement,{
+		onMouseEnter? : React.MouseEventHandler;
+		onMouseLeave? : React.MouseEventHandler;
+		onFocus? : React.FocusEventHandler;
+		onClick? : React.MouseEventHandler;
+		className? : string;
+	}>((_props,ref) => {
+		return <div
+			{...(props.disabled ? {} : _props)}
+			ref = {ref}
+			className = { classnames(less['dropdown-btn'],_props.className ) }
+			style = { { zoom } }
+			title = { props.tooltip }
 		>
 			<Button
 				style = { {
 					width : props?.width || 'auto' ,
 				} }
-				className = { classnames('') }
+				className = { classnames(props.disabled && 'disabled') }
 			>
 				{ props.value }
 			</Button>
-		</div>
-	</Dropdown></ConfigProvider
-	>;
+		</div>;
+	}));
+	
+	return <ConfigProvider theme = { { token : { motion : false } } }>
+		<Dropdown
+			menu = { props.menu }
+			trigger = { [ 'click' ] }
+			open = { props.open }
+			onOpenChange = { props.onOpenChange }
+			overlayClassName = { classnames(less['dropdown']) }
+			overlayStyle = { {
+				zoom : .8
+			} }
+		>
+			<Btn />
+		</Dropdown>
+	</ConfigProvider>;
 });
 
 export type War3DropdownProps = {
-	menu : MenuProps;
-	value : string;
-	width? : string;
-}&Pick<DropdownProps , "open"|"onOpenChange">;
+	menu: MenuProps;
+	value: string;
+	width?: string;
+	size?: 'large' | 'middle' | 'small';
+	disabled? : boolean;
+	tooltip?: string;
+} & Pick<DropdownProps , "open" | "onOpenChange">;
 
-
-import classnames from 'classnames';
+import { ReactPortal } from 'react';
 import { Button , ConfigProvider , Dropdown , DropdownProps , MenuProps } from 'antd';
 import * as less from './style/index.module.less';
+import { shallowEqual } from '#generic/utils';
+import classnames from 'classnames';
+import React from 'react';

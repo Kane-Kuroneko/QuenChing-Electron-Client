@@ -12,7 +12,7 @@ export const AppView = reaxper(() => {
 	</div>;
 });
 
-const useGraphicWidgetDisabled = ( {
+const useSettingsWidgetDisabled = ( {
 	availableInClassic = false ,
 } = {} ) => {
 	const { modEnabled , gameEdition , gameRunning } = reaxel_Core.store;
@@ -127,7 +127,7 @@ const UISettings = reaxper(() => {
 					children : <>
 						<Form.Item label = "半身头像">
 							<Segmented
-								disabled = { useGraphicWidgetDisabled() }
+								disabled = { useSettingsWidgetDisabled() }
 								options = { [
 									{
 										label : '打开' ,
@@ -142,7 +142,7 @@ const UISettings = reaxper(() => {
 						</Form.Item>
 						<Form.Item label = "游戏界面">
 							<Segmented
-								disabled = { useGraphicWidgetDisabled({ availableInClassic : true }) }
+								disabled = { useSettingsWidgetDisabled({ availableInClassic : true }) }
 								options = { [
 									{
 										label : '原版' ,
@@ -170,7 +170,7 @@ const GraphicsSettings = reaxper(() => {
 	
 	
 	useEffect(() => {
-		console.log(useGraphicWidgetDisabled());
+		console.log(useSettingsWidgetDisabled());
 		
 	});
 	
@@ -189,7 +189,7 @@ const GraphicsSettings = reaxper(() => {
 									{ label : '清澈' , value : true , } ,
 									{ label : '正常' , value : false } ,
 								] }
-								disabled = { useGraphicWidgetDisabled() }
+								disabled = { useSettingsWidgetDisabled() }
 							/>
 						</Form.Item>
 						<Form.Item label = "植被">
@@ -198,7 +198,7 @@ const GraphicsSettings = reaxper(() => {
 									{ label : '打开' , value : true , } ,
 									{ label : '关闭' , value : false , } ,
 								] }
-								disabled = { useGraphicWidgetDisabled() }
+								disabled = { useSettingsWidgetDisabled() }
 							/>
 						</Form.Item>
 						<Form.Item label = "高级着色器">
@@ -207,7 +207,7 @@ const GraphicsSettings = reaxper(() => {
 									{ label : '打开' , value : true , } ,
 									{ label : '关闭' , value : false , } ,
 								] }
-								disabled = { useGraphicWidgetDisabled() }
+								disabled = { useSettingsWidgetDisabled() }
 							/>
 						</Form.Item>
 						<Form.Item label = "光源">
@@ -216,7 +216,7 @@ const GraphicsSettings = reaxper(() => {
 									{ label : '固定' , value : true ,  } ,
 									{ label : '旋转' , value : false ,  } ,
 								] }
-								disabled = { useGraphicWidgetDisabled() }
+								disabled = { useSettingsWidgetDisabled() }
 							/>
 						</Form.Item>
 						<Form.Item label = "初始迷雾">
@@ -225,7 +225,7 @@ const GraphicsSettings = reaxper(() => {
 									{ label : '打开' , value : true ,  } ,
 									{ label : '关闭' , value : false ,  } ,
 								] }
-								disabled = { useGraphicWidgetDisabled({ availableInClassic : true }) }
+								disabled = { useSettingsWidgetDisabled({ availableInClassic : true }) }
 							/>
 						</Form.Item>
 						<Form.Item label = "装饰设置">
@@ -238,7 +238,7 @@ const GraphicsSettings = reaxper(() => {
 									{ label : '1.6' , value : 5 , } ,
 									{ label : '复古' , value : 6 , } ,
 								] }
-								disabled = { useGraphicWidgetDisabled({ availableInClassic : true }) }
+								disabled = { useSettingsWidgetDisabled({ availableInClassic : true }) }
 							/>
 						</Form.Item>
 						<Form.Item label = "缩减光晕">
@@ -247,7 +247,7 @@ const GraphicsSettings = reaxper(() => {
 									{ label : '打开' , value : true , } ,
 									{ label : '关闭' , value : false , } ,
 								] }
-								disabled = { useGraphicWidgetDisabled() }
+								disabled = { useSettingsWidgetDisabled() }
 							/>
 						</Form.Item>
 						<Form.Item label = "地形环境">
@@ -259,7 +259,7 @@ const GraphicsSettings = reaxper(() => {
 									{ label : '1.8' , value : 4 ,  } ,
 									{ label : '2.0' , value : 5 ,  } ,
 								] }
-								disabled = { useGraphicWidgetDisabled({ availableInClassic : true }) }
+								disabled = { useSettingsWidgetDisabled({ availableInClassic : true }) }
 							/>
 						</Form.Item>
 						<Form.Item label = "光照">
@@ -270,11 +270,10 @@ const GraphicsSettings = reaxper(() => {
 									{ label : '3' , value : 3 ,  } ,
 									{ label : '对战' , value : 4 ,  } ,
 								] }
-								disabled = { useGraphicWidgetDisabled() }
+								disabled = { useSettingsWidgetDisabled() }
 							/>
 						</Form.Item>
 					</> ,
-					
 				} ,
 			] }
 		/>

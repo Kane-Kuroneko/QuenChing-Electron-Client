@@ -35,7 +35,7 @@
 			"#renderer/*" : ["./src/Renderer/*"],
 			"#src/*" : ["./src/*"],
 			"#root-projects/*" : ["../../../../projects/*"],
-			"#generic/*" : ["../../../../generic-services/*"],
+			"#generic/*" : ["../../generic-services/*"],
 			"#project/*" : ["./*"]
 		}
 	},

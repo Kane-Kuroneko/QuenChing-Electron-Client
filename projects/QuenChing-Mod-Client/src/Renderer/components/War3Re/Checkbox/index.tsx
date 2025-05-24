@@ -1,10 +1,8 @@
-export const War3Checkbox = reaxper((props:React.PropsWithChildren<War3CheckBoxProps>) => {
+export const War3Checkbox = reaxper(( props: React.PropsWithChildren<War3CheckBoxProps> ) => {
 	
 	props = Object.assign({
-		size : '36px',
-	},props??{},{
-		
-	} as War3CheckBoxProps);
+		size : '36px' ,
+	} , props ?? {} , {} as War3CheckBoxProps);
 	
 	return <span
 		className = { classnames(less['war3-checkbox'] , props.disabled && "disabled") }
@@ -29,15 +27,15 @@ export const War3Checkbox = reaxper((props:React.PropsWithChildren<War3CheckBoxP
 			<span className = "label">{ props.children }</span>
 		</label>
 	</span>;
-})
+});
 
 type War3CheckBoxProps = {
-	checked : boolean;
-	onChange : (checked : boolean) => void;
-	disabled? : boolean;
-	size? : number|string;
-	onMouseOver? : (e) => void
+	checked: boolean;
+	onChange: ( checked: boolean ) => void;
+	disabled?: boolean;
+	size?: number | string;
+	onMouseOver?: ( e ) => void
 }
 
-import * as less from './style/index.module.less'
-import classnames from 'classnames'
+import * as less from './style/index.module.less';
+import classnames from 'classnames';

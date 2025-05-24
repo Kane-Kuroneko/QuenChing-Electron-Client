@@ -1,13 +1,12 @@
 .dropdown-btn {
 	border-image: url("../assets/wc3_btn_frame_4k.png") 60 100 fill repeat round;
 	border-image-width: 30px 50px;
-	display:flex;
+	display:inline-flex;
 	justify-content: center;
 	align-items: center;
-	padding: 5px 8px 10px 8px;
+	padding: 5px 8px 12px 8px;
 	height: fit-content;
 	font-size: 18px;
-	
 	
 	&:hover{
 	}
@@ -23,6 +22,11 @@
 			height: auto;
 			background:unset ;
 			
+			&.disabled{
+				pointer-events: none;
+				filter: grayscale(1);
+			}
+			
 			&:hover{
 				
 				background:unset !important; ;
@@ -31,10 +35,11 @@
 				border-image-source: url("../assets/wc3_btn_blue_hover_4k.png");
 			}
 			&:active{
-				color: #b59513;
+				color: #b59513 !important;
 				text-shadow: 0 1px 2px rgba(0,0,0,.8);
 				outline: none;
 				border-image-source: url("../assets/wc3_btn_blue_down_4k.png");
+				border-radius: 10px;
 			}
 		}
 	}
@@ -56,7 +61,7 @@
 			overflow: hidden;
 			white-space: nowrap;
 			text-overflow: ellipsis;
-			font-size: 18px;
+			font-size: 16px;
 			font-variant: small-caps;
 			text-transform: none;
 			line-height: .9;
