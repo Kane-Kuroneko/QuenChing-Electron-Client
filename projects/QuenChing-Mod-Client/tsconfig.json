@@ -40,5 +40,4 @@
 		}
 	},
 	"include" : ["../../global.d.ts","../../g.d.ts", "./src/**" , "../../../../*" , "**/*.ts" , "**/*.tsx"  , "../../../../generic-services/global.d.ts" ] ,
-	"exclude" : [ "node_modules/@types/node" ]
 }

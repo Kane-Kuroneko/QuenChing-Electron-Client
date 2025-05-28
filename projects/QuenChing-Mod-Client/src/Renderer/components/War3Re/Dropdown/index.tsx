@@ -25,7 +25,7 @@ export const War3Dropdown = reaxper(( props: War3DropdownProps ) => {
 				} }
 				className = { classnames(props.disabled && 'disabled') }
 			>
-				{ props.value }
+				{ props.menu.items.find((itm) => itm.key === props.value)?.label }
 			</Button>
 		</div>;
 	}));

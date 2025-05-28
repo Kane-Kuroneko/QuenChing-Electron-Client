@@ -23,7 +23,6 @@ export const WidgetWithPreview = reaxper(() => {
 	
 	const previewImg = items.find(i => i.key === store.mouseOverKey)?.img ?? null;
 	
-	console.log(gameEditionToggleDisabled);
 	return <>
 		<DiffPreviewWindow imgUrl = { previewImg } />
 		<OptionsLabel
@@ -48,14 +47,6 @@ export const WidgetWithPreview = reaxper(() => {
 				value = { items.find(i => i.key === store.selectedKey)?.label }
 			/>
 		</OptionsLabel>
-		<War3Checkbox
-			checked = { store.shadowEnabled }
-			onChange = { ( checked ) => {
-				setState({ shadowEnabled : checked });
-			} }
-		>
-			开启阴影
-		</War3Checkbox>
 		
 		<Collapse
 			activeKey = { store.quenchingCollapseActiveKey }
@@ -132,40 +123,44 @@ export const WidgetWithPreview = reaxper(() => {
 					key : 'UI' ,
 					label : 'UI Settings' ,
 					children : <>
-						<Form.Item label = "半身头像">
-							<Segmented
-								disabled = { useSettingsWidgetDisabled() }
-								options = { [
-									{
-										label : '打开' ,
-										value : true ,
+						<SettingItem label="游戏界面：">
+							<War3Dropdown
+								width = "120px"
+								size = "small"
+								menu = { {
+									expandIcon : <img src = { dropdownArrow } /> ,
+									items : [
+										{
+											label : 'Original' ,
+											key : 'original' ,
+										},
+										{
+											label : 'Carnival' ,
+											key : 'carnival' ,
+										},
+										{
+											label : 'Quenching' ,
+											key : 'quenching' ,
+										},
+									] ,
+									onClick( { key } ){
+										reaxel_UISettings.setState({UIScheme : key as any});
 									} ,
-									{
-										label : '关闭' ,
-										value : false ,
-									} ,
-								] }
+								} }
+								value = { reaxel_UISettings.store.UIScheme }
+								disabled={gameVersionToggleDisabled.disabled}
+								tooltip={gameVersionToggleDisabled.reason}
 							/>
-						</Form.Item>
-						<Form.Item label = "游戏界面">
-							<Segmented
-								disabled = { useSettingsWidgetDisabled({ availableInClassic : true }) }
-								options = { [
-									{
-										label : '原版' ,
-										value : 1 ,
-									} ,
-									{
-										label : '嘉年华' ,
-										value : 2 ,
-									} ,
-									{
-										label : '淬火' ,
-										value : 3 ,
-									} ,
-								] }
-							/>
-						</Form.Item>
+						</SettingItem>
+						<Divider/>
+						<War3Checkbox
+							checked = { reaxel_UISettings.store.bustPortrait }
+							onChange = { ( checked ) => {
+								reaxel_UISettings.setState({ bustPortrait : checked });
+							} }
+						>
+							半身头像
+						</War3Checkbox>
 					</> ,
 				} ,
 			] }
@@ -250,11 +245,12 @@ const items: ( ItemType & { label: string; img: string } )[] = [
 	} ,
 ];
 
+import { reaxel_UISettings } from '#renderer/Browser-Showcase-Pages/reaxels/UI-settings';
 import { reaxel_Core } from '#renderer/Browser-Showcase-Pages/reaxels/core';
 
 import { PrimaryBtn } from '#renderer/components/War3Re/PrimaryBtn';
 import { SettingItem } from '#renderer/components/War3Re/SettingItem';
-import { Form , Segmented } from 'antd';
+import { Form , Segmented , Divider } from 'antd';
 import { Collapse } from '#renderer/components/War3Re/Collapse';
 import { Toggle } from '#renderer/components/War3Re/Toggle';
 import { DiffPreviewWindow } from '#renderer/components/War3Re/Diff-Preview-Window';
